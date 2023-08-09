@@ -1,2 +1,2 @@
 # Tetris
-Tetris Game
+A tetris game using pygame library.

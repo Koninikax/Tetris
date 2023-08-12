@@ -2,7 +2,7 @@ import pygame
 
 # Game size 
 COLUMNS = 10
-ROWS = 15
+ROWS = 20
 CELL_SIZE = 40
 GAME_WIDTH, GAME_HEIGHT = COLUMNS * CELL_SIZE, ROWS * CELL_SIZE
 

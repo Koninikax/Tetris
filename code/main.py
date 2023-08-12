@@ -28,7 +28,7 @@ class Main:
 					exit()
 
 			# display 
-			self.display_surface.fill(BLUE)
+			self.display_surface.fill(GRAY)
 			
 			# components
 			self.game.run()

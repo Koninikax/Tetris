@@ -1,5 +1,6 @@
 from settings import *
 from sys import exit
+from os.path import join
 
 # components
 from game import Game
@@ -21,9 +22,19 @@ class Main:
 		self.next_shapes = [choice(list(TETROMINOS.keys())) for shape in range(3)]
 
 		# components
-		self.game = Game(self.get_next_shape)
+		self.game = Game(self.get_next_shape, self.update_score)
 		self.score = Score()
 		self.preview = Preview()
+
+		# audio 
+		self.music = pygame.mixer.Sound(join('sound','music.wav'))
+		self.music.set_volume(0.05)
+		self.music.play(-1)
+
+	def update_score(self, lines, score, level):
+		self.score.lines = lines
+		self.score.score = score
+		self.score.level = level
 
 	def get_next_shape(self):
 		next_shape = self.next_shapes.pop(0)
